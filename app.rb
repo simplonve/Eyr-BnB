@@ -19,9 +19,9 @@ class Annonce
 	def initialize(annonce)
 		@photo = annonce["photos"][0]["medium"]
 		@ville = annonce["location"]["city"]
-		@prix = annonce["price"]["nightly"]
+		@prix = (annonce["price"]["nightly"] * 0.88).to_i
 		@url = annonce["provider"]["url"]
-		@capacite = annonce["occupancy"]
+		@capacite = annonce["attr"]["occupancy"]
 	end
 	def self.fetch_annonces
 		response = Unirest.get "https://zilyo.p.mashape.com/search?isinstantbook=true&nelatitude=45.23&nelongitude=4.66&provider=airbnb&swlatitude=44.43&swlongitude=4.00",

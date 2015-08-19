@@ -14,15 +14,16 @@
 		</div>
 	</div>
 	<% @annonces.each do |annonce| %>
-		<div class="annonce">
-			<div class="ville"><%= annonce.ville %></div>
-			<div><img src=<%= annonce.photo %>></div>
-			<div class="information">
-				<%= annonce.prix %><span>$<span>
-				<%= annonce.capacite %><span> personnes<span>
-				<a href=<%= annonce.url %> target='blank'>En savoir plus</a>
+		<a href=<%= annonce.url %> target='blank'>
+			<div class="annonce">
+				<div class="ville"><%= annonce.ville %></div>
+				<div><img src=<%= annonce.photo %>></div>
+				<div class="information">
+					<%= annonce.prix %><span>€</span>
+					<%= annonce.capacite %><span>personnes</span>
+				</div>
 			</div>
-		</div>
+		</a>	
 	<% end%>
 </body>
 </html>
