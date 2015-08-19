@@ -9,7 +9,6 @@ get "/" do
     "X-Mashape-Key" => "dtFSGSEqxtmshQloyQuNPHBymLNSp1aN6M1jsnE1XxVJqxvxKE",
     "Accept" => "application/json"
   }
-  binding.pry
-  @response = JSON.parse(response)
+  @resultat = response.body["result"][0]["price"]["monthly"]
   erb :index
 end
