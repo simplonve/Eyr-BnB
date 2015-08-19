@@ -13,7 +13,7 @@
 			<img src="../images/eyrbnb-banniere.png" alt="Eyr'BnB" width="50%">
 		</div>
 	</div>
-	<% @array_d_annonce.each do |annonce| %>
+	<% @annonces.each do |annonce| %>
 		<div class="annonce">
 			<div><%= annonce.ville %></div>
 			<div><img src=<%= annonce.photo %>></div>

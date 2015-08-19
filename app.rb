@@ -1,32 +1,35 @@
+
 require 'sinatra'
 require 'unirest'
 require 'pry'
 require 'json'
 
 get "/" do
-  response = Unirest.get "https://zilyo.p.mashape.com/search?isinstantbook=true&nelatitude=45.23&nelongitude=4.66&provider=airbnb&swlatitude=44.43&swlongitude=4.00",
-  headers:{
-    "X-Mashape-Key" => "dtFSGSEqxtmshQloyQuNPHBymLNSp1aN6M1jsnE1XxVJqxvxKE",
-    "Accept" => "application/json"
-  }
-  @annonces = response.body["result"]
-  @array_d_annonce = []
-  @annonces.each do |annonce|
-  @array_d_annonce << Annonce.new(annonce["photos"][0]["medium"],
-  	 								annonce["location"]["city"],
-  	 								annonce["price"]["nightly"],
-  	 								annonce["provider"]["url"], 
-  	 								annonce["occupancy"])
-  end
-  erb :index
+@annonces = array_d_annonce
+erb :index
+end
+def array_d_annonce
+	array_d_annonce = []
+	Annonce.fetch_annonces.each do |annonce|
+		array_d_annonce << Annonce.new(annonce)
+	end
+	array_d_annonce
 end
 class Annonce
-	def initialize(photo, ville, prix, url, capacite)
-		@photo = photo
-		@ville = ville
-		@prix = prix
-		@url = url
-		@capacite = capacite
+	def initialize(annonce)
+		@photo = annonce["photos"][0]["medium"]
+		@ville = annonce["location"]["city"]
+		@prix = annonce["price"]["nightly"]
+		@url = annonce["provider"]["url"]
+		@capacite = annonce["occupancy"]
+	end
+	def self.fetch_annonces
+		response = Unirest.get "https://zilyo.p.mashape.com/search?isinstantbook=true&nelatitude=45.23&nelongitude=4.66&provider=airbnb&swlatitude=44.43&swlongitude=4.00",
+  		headers:{
+    	"X-Mashape-Key" => "dtFSGSEqxtmshQloyQuNPHBymLNSp1aN6M1jsnE1XxVJqxvxKE",
+    	"Accept" => "application/json"
+  		}
+  		response.body["result"]
 	end
 	def photo
 		@photo
