@@ -50,22 +50,44 @@
 
 a {
 	text-decoration: none;
-	color: black;
+	color: rgba(52, 152, 219,1.0);
+	border: 1px solid rgba(52, 152, 219,1.0);
+	padding: 2%;
+}
+
+a:hover {
+	text-decoration: none;
+	color: white;
+	background-color: rgba(52, 152, 219,1.0);
+	padding: 2%;
+}
+
+i{
+	margin-right: 1%;
+}
+
+.classement{
+	padding: 0 5%;
 }
 
 .annonce{
-	float: left;
-	text-align: center;
 	width: 50%;
+	margin: 0 25%;
 	padding: 1%;
+	margin-bottom: 0.5%;
 	-moz-box-shadow: 1px 1px 12px #555;
 	-webkit-box-shadow: 1px 1px 12px #555;
 	-o-box-shadow: 1px 1px 12px #555;
 	box-shadow: 1px 1px 12px #555;
 }
 
+.photo{
+	text-align: center;
+}
+
 .ville{
 	font-size: 1.5em;
+	text-align: center;
 	padding-bottom: 0.5%;
 	font-family: 'Hind-Regular', 'sans-serif';
 }
@@ -73,4 +95,5 @@ a {
 .information{
 	padding-top: 0.5%;
 	font-family: 'Raleway-Regular', 'sans-serif';
+	text-align: center;
 }

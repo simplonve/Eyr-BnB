@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <title>Eyr'BnB</title>
   <link rel="stylesheet" type="text/css" href="css/index.css">
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
   <script type ="text/javascript" src="js/script.js"></script>
 </head>
 <body>
@@ -13,18 +14,19 @@
 			<img src="../images/eyrbnb-banniere.png" alt="Eyr'BnB" width="50%">
 		</div>
 	</div>
-	<% @annonces.each do |annonce| %>
-		<a href=<%= annonce.url %> target='blank'>
+	<div class="classement">
+		<% @annonces.each do |annonce| %>
 			<div class="annonce">
 				<div class="ville"><%= annonce.ville %></div>
-				<div><img src=<%= annonce.photo %>></div>
+				<div class="photo"><img src=<%= annonce.photo %>></div>
 				<div class="information">
-					<%= annonce.prix %><span>€</span>
-					<%= annonce.capacite %><span>personnes</span>
+					<i class="fa fa-eur"></i><%= annonce.prix %></br>
+					<i class="fa fa-bed"></i><%= annonce.capacite %><span> personnes</span><br><br><br><br>
+					<a href=<%= annonce.url %> target='blank'>Voir l'offre</a>
 				</div>
-			</div>
-		</a>	
-	<% end%>
+			</div>	
+		<% end%>
+	</div>
 </body>
 </html>
 

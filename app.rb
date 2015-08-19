@@ -17,7 +17,7 @@ def array_d_annonce
 end
 class Annonce
 	def initialize(annonce)
-		@photo = annonce["photos"][0]["medium"]
+		@photo = annonce["photos"][0]["large"]
 		@ville = annonce["location"]["city"]
 		@prix = (annonce["price"]["nightly"] * 0.88).to_i
 		@url = annonce["provider"]["url"]
