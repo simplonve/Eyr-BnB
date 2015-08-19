@@ -17,4 +17,15 @@
 	background-position: 50% 50%;
  	height: 600px;
  	margin-top: -15%;
+ 	margin-bottom: 2%;
  }
+
+.logo{
+	padding-top: 10%;
+}
+
+.annonce{
+	display: inline-block;
+	text-align: center;
+	width: 50%;
+}

@@ -1,14 +1,29 @@
 <!doctype html>
 <html lang="fr">
 <head>
-	<link rel="icon" type="image/png" href="images/favicon.png" />
+	<link rel="icon" type="image/png" href="images/favicon-eyrbnb.png" />
   <meta charset="utf-8">
   <title>Eyr'BnB</title>
   <link rel="stylesheet" type="text/css" href="css/index.css">
   <script type ="text/javascript" src="js/script.js"></script>
 </head>
 <body>
-	<div class="banniere">	
+	<div class="banniere">
+		<div class="logo">
+			<img src="../images/eyrbnb-banniere.png" alt="Eyr'BnB" width="50%">
+		</div>
 	</div>
+	<% @array_d_annonce.each do |annonce| %>
+		<div class="annonce">
+			<div><%= annonce.ville %></div>
+			<div><img src=<%= annonce.photo %>></div>
+			<div>
+				<%= annonce.prix %><span>$<span>
+				<%= annonce.capacite %><span> personnes<span>
+				<a href=<%= annonce.url %> target='blank'>En savoir plus</a>
+			</div>
+		</div>
+	<% end%>
 </body>
 </html>
+
