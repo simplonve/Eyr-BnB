@@ -1,3 +1,5 @@
 <h1>Bonjour</h1>
 
-<%= @resultat %>
+<% @array_d_annonce.each do |annonce| %>
+	<%= annonce.ville %>
+<% end%>
