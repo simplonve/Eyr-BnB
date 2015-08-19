@@ -2,4 +2,8 @@
 
 <% @array_d_annonce.each do |annonce| %>
 	<%= annonce.ville %>
+	<img src=<%= annonce.photo %> >
+	<%= annonce.prix %><span>$<span>
+	<%= annonce.capacite %><span> personnes<span>
+	<a href=<%= annonce.url %> target='blank'>En savoir plus</a>
 <% end%>

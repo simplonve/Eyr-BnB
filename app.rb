@@ -4,7 +4,7 @@ require 'pry'
 require 'json'
 
 get "/" do
-	response = Unirest.get "https://zilyo.p.mashape.com/search?isinstantbook=true&nelatitude=22.37&nelongitude=-154.48000000000002&provider=airbnb%2Chousetrip&swlatitude=18.55&swlongitude=-160.52999999999997",
+  response = Unirest.get "https://zilyo.p.mashape.com/search?isinstantbook=true&nelatitude=45.23&nelongitude=4.66&provider=airbnb&swlatitude=44.43&swlongitude=4.00",
   headers:{
     "X-Mashape-Key" => "dtFSGSEqxtmshQloyQuNPHBymLNSp1aN6M1jsnE1XxVJqxvxKE",
     "Accept" => "application/json"
